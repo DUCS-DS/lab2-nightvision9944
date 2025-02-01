@@ -2,20 +2,33 @@
 #Lab 2, Data Structures
 def monotonic(lst):
     """Return True if lst is monotonic; return False, otherwise."""
-    len_lst = len(lst)
-    intA = lst[0]
-    intB = lst[1]
-    intC = lst[2]
-    if intA - intB >= 0 and intA != intC:
-        return True
-    else:
-        return False
+    list1 = []
+    for i in range(len(lst)-1):
+        if lst[i] <= lst[i+1]:
+            list1.append(True)
+        else:
+            list1.append(False)
+    for j in list1:
+        if j == False:
+            return 'This list is not monotonic'
+        else:
+            return 'This list is monotonic, ascending'
+    #for k in range(len(lst)-1):
+    #    if lst[k] >= lst[k+1]: #List B works with this one :)
+    #        print('h')
+    #    else:
+    #        print('i')
+    #for l in range(len(lst)-1):
+    #    if lst[l] == lst[l+1]:
+    #        print('h')
+    #    else:
+    #        print('i')
 
 
 lstA = [1, 1, 3, 100] #This is ascending, monotonic
 lstB = [11, 1, -9, -10] #This is descending, monotonic
 lstC = [2, 3, 2, 3] #This is neither, non-monotonic
 
-print(monotonic(lstA))
-print(monotonic(lstB))
-print(monotonic(lstC))
+x = monotonic(lstA)
+print(x)
+
